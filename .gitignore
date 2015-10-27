@@ -1,0 +1,9 @@
+# Mac
+.DS_Store
+
+# NPM
+node_modules/
+npm-debug.log
+
+# Build folder
+dist/js/
