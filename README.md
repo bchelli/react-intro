@@ -11,48 +11,48 @@ Follow the step by step tutorial by switching branches.
 [Quick access](https://github.com/bchelli/react-intro/tree/step-2)
 
 ## Step 3 - Props
-### 1) Create a counter Component
-They are to React Component what are parameters to a function.
+[Quick access](https://github.com/bchelli/react-intro/tree/step-3)
 
+## Step 4 - State
+### 1) Update the Counter component
 Create ./app/component/Counter.js with the following content
 ```javascript
 import React from 'react';
 
 class Counter extends React.Component {
+    constructor (props) {
+        super(props);
+        this.state = { count: 0 };
+    }
+
     render () {
         return (
             <div>
                 <h2>Counter "{this.props.name}"</h2>
+                <button onClick={this.inc.bind(this)}>+</button>
+                {this.state.count}
+                <button onClick={this.dec.bind(this)}>-</button>
             </div>
         );
+    }
+
+    inc () {
+        this.setState({
+            count: this.state.count + 1
+        });
+    }
+
+    dec () {
+        this.setState({
+            count: this.state.count - 1
+        });
     }
 }
 
 export default Counter
 ```
 
-### 2) Use the Counter in the App component
-Update ./app/component/App.js with the following content
-```javascript
-import React from 'react';
-import Counter from './Counter';
-
-class App extends React.Component {
-    render () {
-        return (
-            <div>
-                <h1>Hello World</h1>
-                <p>This is a test app.</p>
-                <Counter name="Level" />
-            </div>
-        );
-    }
-}
-
-export default App
-```
-
-### 3) Run
+### 2) Run
 ```bash
 npm run build
 open dist/index.html
