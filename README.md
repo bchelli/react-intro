@@ -41,7 +41,7 @@ import React from 'react';
 
 React.render(
   <h1>Hello World</h1>,
-  document.body
+  document.getElementById('react-root')
 );
 ```
 
@@ -50,10 +50,9 @@ Create ./dist/index.html with the following content
 ```html
 <!DOCTYPE html>
 <html>
-	<head>
-		<script type="text/javascript" src="./js/bundle.js"></script>
-	</head>
 	<body>
+		<div id="react-root"></div>
+		<script type="text/javascript" src="./js/bundle.js"></script>
 	</body>
 </html>
 ```
