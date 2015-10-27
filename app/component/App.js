@@ -1,4 +1,5 @@
 import React from 'react';
+import Counter from './Counter';
 
 class App extends React.Component {
     render () {
@@ -6,6 +7,7 @@ class App extends React.Component {
             <div>
                 <h1>Hello World</h1>
                 <p>This is a test app.</p>
+                <Counter name="Level" />
             </div>
         );
     }
