@@ -28,7 +28,7 @@ gulp.task('build', function () {
   .transform(babelify)
   .bundle()
   .pipe(source('bundle.js'))
-  .pipe(gulp.dest('dist'));
+  .pipe(gulp.dest('dist/js'));
 });
 
 gulp.task('default', ['build']);
