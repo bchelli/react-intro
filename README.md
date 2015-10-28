@@ -34,6 +34,7 @@ Update ./app/component/Counter.js by adding the following methods to the class C
 
     shouldComponentUpdate (nextProps, nextState) {
         console.log('shouldComponentUpdate', nextProps, nextState);
+        return true;
     }
 
     componentWillUpdate (nextProps, nextState) {
