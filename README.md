@@ -14,42 +14,39 @@ Follow the step by step tutorial by switching branches.
 [Quick access](https://github.com/bchelli/react-intro/tree/step-3)
 
 ## Step 4 - State
-### 1) Update the Counter component
-Create ./app/component/Counter.js with the following content
+[Quick access](https://github.com/bchelli/react-intro/tree/step-4)
+
+## Step 5 - Component Lifecycle
+### 1) Update Counter
+Update ./app/component/Counter.js by adding the following methods to the class Counter
 ```javascript
-import React from 'react';
-
-class Counter extends React.Component {
-    constructor (props) {
-        super(props);
-        this.state = { count: 0 };
+    componentWillMount () {
+        console.log('componentWillMount');
     }
 
-    render () {
-        return (
-            <div>
-                <h2>Counter "{this.props.name}"</h2>
-                <button onClick={this.inc.bind(this)}>+</button>
-                {this.state.count}
-                <button onClick={this.dec.bind(this)}>-</button>
-            </div>
-        );
+    componentDidMount () {
+        console.log('componentDidMount');
     }
 
-    inc () {
-        this.setState({
-            count: this.state.count + 1
-        });
+    componentWillReceiveProps (nextProps) {
+        console.log('componentWillReceiveProps', nextProps);
     }
 
-    dec () {
-        this.setState({
-            count: this.state.count - 1
-        });
+    shouldComponentUpdate (nextProps, nextState) {
+        console.log('shouldComponentUpdate', nextProps, nextState);
     }
-}
 
-export default Counter
+    componentWillUpdate (nextProps, nextState) {
+        console.log('componentWillUpdate', nextProps, nextState);
+    }
+
+    componentDidUpdate (prevProps, prevState) {
+        console.log('componentDidUpdate', prevProps, prevState);
+    }
+
+    componentWillUnmount () {
+        console.log('componentWillUnmount');
+    }
 ```
 
 ### 2) Run
